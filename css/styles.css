@@ -1,0 +1,12 @@
+@import url("typography.css");
+html, body {
+  max-width: 100vw;
+}
+
+body {
+  box-sizing: content-box;
+  max-height: 100vh;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=styles.css.map */
