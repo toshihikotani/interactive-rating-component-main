@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="styleshet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive rating component</title>
@@ -11,29 +11,63 @@
 </head>
 <body>
 
-  <!-- Rating state start -->
+  <main>
 
-  How did we do?
+    <!-- Rating state start -->
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <form action="/" method="post" target="_self">
 
-  1 2 3 4 5
+      <section id="rate-content" class="rating-section">
 
-  Submit
+        <div class="star-icon-circle">
+          <img src="images/icon-star.svg" alt="Star Icon"/>
+        </div>
 
-  <!-- Rating state end -->
+        <h1 class="rate-header">How did we do?</h1>
 
-  <!-- Thank you state start -->
+        <p class="rate-paragraph">
+          Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+        </p>
 
-  You selected <!-- Add rating here --> out of 5
+        <div class="rate-selection-buttons">
+          <button class="rate-button">1</button> 
+          <button class="rate-button">2</button>  
+          <button class="rate-button">3</button>  
+          <button class="rate-button">4</button>  
+          <button class="rate-button">5</button> 
+        </div>
 
-  Thank you!
+        <button class="submit-button" type="submit">Submit</button>
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+      </section>
 
-  <!-- Thank you state end -->
+    </form>
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+
+    <sectio id="thank-you-content" class="thank-you-section">
+
+      <img src="images/illustration-thank-you.svg" alt="Thank You Illustration" />
+
+      <div class="selected-result-box">
+        You selected <!-- Add rating here --><span id="selected-rate"></span> out of 5
+      </div>
+
+      <h1 class="thank-you-header">Thank you!</h1>
+
+      <p class="thank-you-paragraph">
+          We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!
+      </p>
+
+    </section>
+
+    <!-- Thank you state end -->
+
+  </main>
 
   <script src="js/script.js"></script>
 </body>

@@ -10,7 +10,10 @@ $white: hsl(0, 0%, 100%);
 $lightGrey: hsl(217, 12%, 63%);
 $mediumGrey: hsl(216, 12%, 54%);
 $darkBlue: hsl(213, 19%, 18%);
+$mediumBlue:hsl(210, 32%, 19%);
 $veryDarkBlue: hsl(216, 12%, 8%);
+
+/* COMMON */
 
 html, body {
     max-width: 100vw;
@@ -18,6 +21,89 @@ html, body {
 
 body {
     box-sizing: content-box;
-    max-height: 100vh;
+    height: 100vh;
     font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.rate-header, .thank-you-header {
+    font-family: 'Overpass-Bold';
+    color: $white;
+}
+
+.rate-paragraph, .thank-you-paragraph {
+    font-family: 'Overpass-Regular';
+    font-size: 0.95em;
+    color: $lightGrey;
+    line-height: 25px;
+}
+
+/* MAIN */
+main {
+    background-color: $darkBlue;
+    border-radius: 15px;
+    width: 280px;
+    height: 310px;
+    padding: 25px;
+
+    /* RATE SECTION */
+    .rating-section{
+
+        .rate-selection-buttons{
+            display: flex;
+            justify-content: space-around;
+    
+            .rate-button {
+                width: 45px;
+                height: 45px;
+                border: 1px solid transparent;
+                border-radius: 50px;
+                background-color: $mediumBlue;
+                color: $lightGrey;
+                cursor: pointer;
+                font-family: 'Overpass-Regular';
+
+                &:hover {
+                    background-color: $orange;
+                    color: $white;
+                }
+            }
+
+            .rate-button-selected {
+                width: 45px;
+                height: 45px;
+                border: 1px solid transparent;
+                border-radius: 50px;
+                background-color: $mediumGrey;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+
+        .submit-button {
+            margin: 16px 0px;
+            width: 285px;
+            height: 45px;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            background-color: $orange;
+            color: $white;
+            cursor: pointer;
+            font-family: 'Overpass-Bold';
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            &:hover {
+                background-color: $white;
+                color: $orange;
+            }
+        }  
+    }
+
+
+
+
+}
+
