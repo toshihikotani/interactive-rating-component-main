@@ -7,6 +7,7 @@ html, body {
 body {
   box-sizing: content-box;
   height: 100vh;
+  background-color: hsl(216deg, 12%, 8%);
   font-size: 15px;
   display: flex;
   justify-content: center;
@@ -22,31 +23,48 @@ body {
   font-family: "Overpass-Regular";
   font-size: 0.95em;
   color: hsl(217deg, 12%, 63%);
-  line-height: 25px;
+  line-height: 20px;
 }
 
 /* MAIN */
 main {
-  background-color: hsl(213deg, 19%, 18%);
+  background-color: hsl(215deg, 34%, 16%);
   border-radius: 15px;
   width: 280px;
   height: 310px;
   padding: 25px;
   /* RATE SECTION */
+  /* THANK YOU SECTION */
+}
+main .rating-section .star-icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(210deg, 32%, 19%);
+  border: 1px solid transparent;
+  border-radius: 50px;
+  display: flex;
+}
+main .rating-section .star-icon-circle img {
+  width: 40%;
+  margin: auto;
+}
+main .rating-section .rate-paragraph {
+  margin-bottom: 25px;
 }
 main .rating-section .rate-selection-buttons {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 8px;
 }
 main .rating-section .rate-selection-buttons .rate-button {
   width: 45px;
   height: 45px;
+  background-color: hsl(210deg, 32%, 19%);
   border: 1px solid transparent;
   border-radius: 50px;
-  background-color: hsl(210deg, 32%, 19%);
+  font-family: "Overpass-Regular";
   color: hsl(217deg, 12%, 63%);
   cursor: pointer;
-  font-family: "Overpass-Regular";
 }
 main .rating-section .rate-selection-buttons .rate-button:hover {
   background-color: hsl(25deg, 97%, 53%);
@@ -55,28 +73,149 @@ main .rating-section .rate-selection-buttons .rate-button:hover {
 main .rating-section .rate-selection-buttons .rate-button-selected {
   width: 45px;
   height: 45px;
+  background-color: hsl(216deg, 12%, 54%);
   border: 1px solid transparent;
   border-radius: 50px;
-  background-color: hsl(216deg, 12%, 54%);
   color: hsl(0deg, 0%, 100%);
   cursor: pointer;
 }
 main .rating-section .submit-button {
   margin: 16px 0px;
-  width: 285px;
-  height: 45px;
+  width: 280px;
+  height: 40px;
+  background-color: hsl(25deg, 97%, 53%);
   border: 1px solid transparent;
   border-radius: 50px;
-  background-color: hsl(25deg, 97%, 53%);
-  color: hsl(0deg, 0%, 100%);
-  cursor: pointer;
   font-family: "Overpass-Bold";
+  color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 main .rating-section .submit-button:hover {
   background-color: hsl(0deg, 0%, 100%);
   color: hsl(25deg, 97%, 53%);
 }
+main .thank-you-section {
+  display: none;
+  text-align: center;
+}
+main .thank-you-section img {
+  display: block;
+  width: 50%;
+  margin: 10px auto 28px;
+}
+main .thank-you-section .selected-result-box {
+  width: 160px;
+  height: 12px;
+  padding: 10px 5px;
+  background-color: hsl(210deg, 32%, 19%);
+  border-radius: 50px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+main .thank-you-section .selected-result-box p {
+  margin: 0;
+  vertical-align: middle;
+  font-family: "Overpass-Regular";
+  font-size: 0.95em;
+  color: hsl(25deg, 97%, 53%);
+}
+
+/* MEDIA QUERIES */
+/* PORTRAIT TABLETS */
+/* LANDSCAPE TABLETS */
+@media only screen and (min-width: 768px) {
+  .rate-header, .thank-you-header {
+    font-family: "Overpass-Bold";
+    font-size: 1.85em;
+    color: hsl(0deg, 0%, 100%);
+  }
+  .rate-paragraph, .thank-you-paragraph {
+    font-family: "Overpass-Regular";
+    font-size: 1em;
+    color: hsl(217deg, 12%, 63%);
+    line-height: 25px;
+  }
+  /* MAIN */
+  main {
+    width: 340px;
+    height: 340px;
+    padding: 40px;
+    border-radius: 20px;
+    /* RATE SECTION */
+    /* THANK YOU SECTION */
+  }
+  main .rating-section .star-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(210deg, 32%, 19%);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    margin-bottom: 30px;
+  }
+  main .rating-section .star-icon-circle img {
+    width: 30%;
+  }
+  main .rating-section .rate-header, main .rating-section .rate-paragraph {
+    margin: 6px 0px;
+  }
+  main .rating-section .rate-paragraph {
+    margin-bottom: 25px;
+  }
+  main .rating-section .rate-selection-buttons .rate-button {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(210deg, 32%, 19%);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-family: "Overpass-Regular";
+    font-size: 1.25em;
+    color: hsl(217deg, 12%, 63%);
+  }
+  main .rating-section .rate-selection-buttons .rate-button-selected {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(216deg, 12%, 54%);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    color: hsl(0deg, 0%, 100%);
+    cursor: pointer;
+  }
+  main .rating-section .submit-button {
+    margin: 24px 0px;
+    width: 345px;
+    height: 45px;
+    background-color: hsl(25deg, 97%, 53%);
+    border: 1px solid transparent;
+    border-radius: 50px;
+  }
+  main .thank-you-section img {
+    display: block;
+    width: 48%;
+    margin: 10px auto 25px;
+  }
+  main .thank-you-section .selected-result-box {
+    width: 195px;
+    height: 12px;
+    padding: 10px 5px;
+    background-color: hsl(210deg, 32%, 19%);
+    border-radius: 50px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  main .thank-you-section .selected-result-box p {
+    margin: 0;
+    vertical-align: middle;
+    font-family: "Overpass-Regular";
+    font-size: 1em;
+    color: hsl(25deg, 97%, 53%);
+  }
+  main .thank-you-section .thank-you-header, main .thank-you-section .thank-you-paragraph {
+    margin: 2px;
+  }
+}
+/* LAPTOP/DESKTOP */
+/* LARGE LAPTOP/DESKTOP */
 
 /*# sourceMappingURL=styles.css.map */

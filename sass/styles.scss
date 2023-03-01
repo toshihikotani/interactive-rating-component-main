@@ -13,6 +13,21 @@ $darkBlue: hsl(213, 19%, 18%);
 $mediumBlue:hsl(210, 32%, 19%);
 $veryDarkBlue: hsl(216, 12%, 8%);
 
+// MIXINS
+@mixin fontStyles($fontFamily, $fontSize: 15px, $color){
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+}
+
+@mixin circle($width, $height, $backgroundColor){
+    width: $width;
+    height: $height;
+    background-color: $backgroundColor;
+    border: 1px solid transparent;
+    border-radius: 50px;
+}
+
 /* COMMON */
 
 html, body {
@@ -22,6 +37,7 @@ html, body {
 body {
     box-sizing: content-box;
     height: 100vh;
+    background-color: $veryDarkBlue;
     font-size: 15px;
     display: flex;
     justify-content: center;
@@ -29,20 +45,17 @@ body {
 }
 
 .rate-header, .thank-you-header {
-    font-family: 'Overpass-Bold';
-    color: $white;
+    @include fontStyles('Overpass-Bold', null , $white);
 }
 
 .rate-paragraph, .thank-you-paragraph {
-    font-family: 'Overpass-Regular';
-    font-size: 0.95em;
-    color: $lightGrey;
-    line-height: 25px;
+    @include fontStyles('Overpass-Regular', 0.95em , $lightGrey);
+    line-height: 20px;
 }
 
 /* MAIN */
 main {
-    background-color: $darkBlue;
+    background-color: hsl(215, 34%, 16%);
     border-radius: 15px;
     width: 280px;
     height: 310px;
@@ -50,20 +63,32 @@ main {
 
     /* RATE SECTION */
     .rating-section{
+        
+
+        .star-icon-circle {
+            @include circle(40px, 40px, $mediumBlue);
+
+            display: flex;
+           
+            img {
+                width: 40%;
+                margin: auto;
+            }
+        }
+
+        .rate-paragraph {
+            margin-bottom: 25px;
+        }
 
         .rate-selection-buttons{
             display: flex;
             justify-content: space-around;
+            margin-bottom: 8px;
     
             .rate-button {
-                width: 45px;
-                height: 45px;
-                border: 1px solid transparent;
-                border-radius: 50px;
-                background-color: $mediumBlue;
-                color: $lightGrey;
+                @include circle(45px, 45px, $mediumBlue);
+                @include fontStyles('Overpass-Regular', null , $lightGrey);
                 cursor: pointer;
-                font-family: 'Overpass-Regular';
 
                 &:hover {
                     background-color: $orange;
@@ -72,11 +97,7 @@ main {
             }
 
             .rate-button-selected {
-                width: 45px;
-                height: 45px;
-                border: 1px solid transparent;
-                border-radius: 50px;
-                background-color: $mediumGrey;
+                @include circle(45px, 45px, $mediumGrey);
                 color: $white;
                 cursor: pointer;
             }
@@ -84,16 +105,11 @@ main {
 
         .submit-button {
             margin: 16px 0px;
-            width: 285px;
-            height: 45px;
-            border: 1px solid transparent;
-            border-radius: 50px;
-            background-color: $orange;
-            color: $white;
-            cursor: pointer;
-            font-family: 'Overpass-Bold';
+            @include circle(280px, 40px, $orange);
+            @include fontStyles('Overpass-Bold', null , $white);
             text-transform: uppercase;
             letter-spacing: 2px;
+            cursor: pointer;
 
             &:hover {
                 background-color: $white;
@@ -102,8 +118,142 @@ main {
         }  
     }
 
+    /* THANK YOU SECTION */
+    .thank-you-section {
+        display: none;
+        text-align: center;
 
+        img {
+            display: block;
+            width: 50%;
+            margin: 10px auto 28px;
+        }
 
+        .selected-result-box {
+            width: 160px;
+            height: 12px;
+            padding: 10px 5px;
+            background-color: $mediumBlue;
+            border-radius: 50px;
+            margin: auto;
+            margin-bottom: 25px;
+
+            p {
+                margin: 0;
+                vertical-align: middle;
+                @include fontStyles('Overpass-Regular', 0.95em , $orange);
+            }
+        }
+    }
 
 }
 
+/* MEDIA QUERIES */
+
+/* PORTRAIT TABLETS */
+@media only screen and (min-width:600px) {
+    
+}
+
+/* LANDSCAPE TABLETS */
+@media only screen and (min-width:768px) {
+
+    .rate-header, .thank-you-header {
+        @include fontStyles('Overpass-Bold', 1.85em , $white);
+    }
+    
+    .rate-paragraph, .thank-you-paragraph {
+        @include fontStyles('Overpass-Regular', 1em , $lightGrey);
+        line-height: 25px;
+    }
+    
+    /* MAIN */
+    main {
+        width: 340px;
+        height: 340px;
+        padding: 40px;
+        border-radius: 20px;
+    
+        /* RATE SECTION */
+        .rating-section{
+    
+            .star-icon-circle {
+                @include circle(50px, 50px, $mediumBlue);
+                margin-bottom: 30px;
+    
+                img {
+                    width: 30%;
+                }
+            }
+            
+            .rate-header, .rate-paragraph {
+                margin: 6px 0px;
+            }
+
+            .rate-paragraph {
+                margin-bottom: 25px;
+            }
+    
+
+            .rate-selection-buttons{
+        
+                .rate-button {
+                    @include circle(50px, 50px, $mediumBlue);
+                    @include fontStyles('Overpass-Regular', 1.25em , $lightGrey);
+                }
+    
+                .rate-button-selected {
+                    @include circle(50px, 50px, $mediumGrey);
+                    color: $white;
+                    cursor: pointer;
+                }
+            }
+    
+            .submit-button {
+                margin: 24px 0px;
+                @include circle(345px, 45px, $orange);
+            }  
+        }
+    
+        /* THANK YOU SECTION */
+        .thank-you-section {
+    
+            img {
+                display: block;
+                width: 48%;
+                margin: 10px auto 25px;
+            }
+    
+            .selected-result-box {
+                width: 195px;
+                height: 12px;
+                padding: 10px 5px;
+                background-color: $mediumBlue;
+                border-radius: 50px;
+                margin: auto;
+                margin-bottom: 40px;
+    
+                p {
+                    margin: 0;
+                    vertical-align: middle;
+                    @include fontStyles('Overpass-Regular', 1em , $orange);
+                }
+            }
+
+            .thank-you-header, .thank-you-paragraph {
+                margin: 2px;
+            }
+        }
+    
+    }
+}
+
+/* LAPTOP/DESKTOP */
+@media only screen and (min-width:992px) {
+    
+}
+
+/* LARGE LAPTOP/DESKTOP */
+@media only screen and (min-width:1200px) {
+    
+}
