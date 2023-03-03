@@ -20,10 +20,9 @@ $veryDarkBlue: hsl(216, 12%, 8%);
     color: $color;
 }
 
-@mixin circle($width, $height, $backgroundColor){
+@mixin circle($width, $height){
     width: $width;
     height: $height;
-    background-color: $backgroundColor;
     border: 1px solid transparent;
     border-radius: 50px;
 }
@@ -61,12 +60,16 @@ main {
     height: 310px;
     padding: 25px;
 
+    .hide-content {
+        display: none;
+    }
+
     /* RATE SECTION */
     .rating-section{
-        
 
         .star-icon-circle {
-            @include circle(40px, 40px, $mediumBlue);
+            @include circle(40px, 40px);
+            background-color: $mediumBlue;
 
             display: flex;
            
@@ -86,7 +89,7 @@ main {
             margin-bottom: 8px;
     
             .rate-button {
-                @include circle(45px, 45px, $mediumBlue);
+                @include circle(45px, 45px);
                 @include fontStyles('Overpass-Regular', null , $lightGrey);
                 cursor: pointer;
 
@@ -96,16 +99,20 @@ main {
                 }
             }
 
-            .rate-button-selected {
-                @include circle(45px, 45px, $mediumGrey);
-                color: $white;
-                cursor: pointer;
+            .unselected {
+                background-color: $mediumBlue;
+            }
+
+            .selected{
+                background-color: $mediumGrey;
+                color: $white !important;
             }
         }
 
         .submit-button {
             margin: 16px 0px;
-            @include circle(280px, 40px, $orange);
+            @include circle(280px, 40px);
+            background-color: $orange;
             @include fontStyles('Overpass-Bold', null , $white);
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -120,7 +127,7 @@ main {
 
     /* THANK YOU SECTION */
     .thank-you-section {
-        display: none;
+        
         text-align: center;
 
         img {
@@ -178,7 +185,7 @@ main {
         .rating-section{
     
             .star-icon-circle {
-                @include circle(50px, 50px, $mediumBlue);
+                @include circle(50px, 50px);
                 margin-bottom: 30px;
     
                 img {
@@ -194,24 +201,17 @@ main {
                 margin-bottom: 25px;
             }
     
-
             .rate-selection-buttons{
         
                 .rate-button {
-                    @include circle(50px, 50px, $mediumBlue);
+                    @include circle(50px, 50px);
                     @include fontStyles('Overpass-Regular', 1.25em , $lightGrey);
-                }
-    
-                .rate-button-selected {
-                    @include circle(50px, 50px, $mediumGrey);
-                    color: $white;
-                    cursor: pointer;
                 }
             }
     
             .submit-button {
                 margin: 24px 0px;
-                @include circle(345px, 45px, $orange);
+                @include circle(345px, 45px);
             }  
         }
     

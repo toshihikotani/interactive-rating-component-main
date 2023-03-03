@@ -36,12 +36,15 @@ main {
   /* RATE SECTION */
   /* THANK YOU SECTION */
 }
+main .hide-content {
+  display: none;
+}
 main .rating-section .star-icon-circle {
   width: 40px;
   height: 40px;
-  background-color: hsl(210deg, 32%, 19%);
   border: 1px solid transparent;
   border-radius: 50px;
+  background-color: hsl(210deg, 32%, 19%);
   display: flex;
 }
 main .rating-section .star-icon-circle img {
@@ -59,7 +62,6 @@ main .rating-section .rate-selection-buttons {
 main .rating-section .rate-selection-buttons .rate-button {
   width: 45px;
   height: 45px;
-  background-color: hsl(210deg, 32%, 19%);
   border: 1px solid transparent;
   border-radius: 50px;
   font-family: "Overpass-Regular";
@@ -70,22 +72,20 @@ main .rating-section .rate-selection-buttons .rate-button:hover {
   background-color: hsl(25deg, 97%, 53%);
   color: hsl(0deg, 0%, 100%);
 }
-main .rating-section .rate-selection-buttons .rate-button-selected {
-  width: 45px;
-  height: 45px;
+main .rating-section .rate-selection-buttons .unselected {
+  background-color: hsl(210deg, 32%, 19%);
+}
+main .rating-section .rate-selection-buttons .selected {
   background-color: hsl(216deg, 12%, 54%);
-  border: 1px solid transparent;
-  border-radius: 50px;
-  color: hsl(0deg, 0%, 100%);
-  cursor: pointer;
+  color: hsl(0deg, 0%, 100%) !important;
 }
 main .rating-section .submit-button {
   margin: 16px 0px;
   width: 280px;
   height: 40px;
-  background-color: hsl(25deg, 97%, 53%);
   border: 1px solid transparent;
   border-radius: 50px;
+  background-color: hsl(25deg, 97%, 53%);
   font-family: "Overpass-Bold";
   color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
@@ -97,7 +97,6 @@ main .rating-section .submit-button:hover {
   color: hsl(25deg, 97%, 53%);
 }
 main .thank-you-section {
-  display: none;
   text-align: center;
 }
 main .thank-you-section img {
@@ -149,7 +148,6 @@ main .thank-you-section .selected-result-box p {
   main .rating-section .star-icon-circle {
     width: 50px;
     height: 50px;
-    background-color: hsl(210deg, 32%, 19%);
     border: 1px solid transparent;
     border-radius: 50px;
     margin-bottom: 30px;
@@ -166,27 +164,16 @@ main .thank-you-section .selected-result-box p {
   main .rating-section .rate-selection-buttons .rate-button {
     width: 50px;
     height: 50px;
-    background-color: hsl(210deg, 32%, 19%);
     border: 1px solid transparent;
     border-radius: 50px;
     font-family: "Overpass-Regular";
     font-size: 1.25em;
     color: hsl(217deg, 12%, 63%);
   }
-  main .rating-section .rate-selection-buttons .rate-button-selected {
-    width: 50px;
-    height: 50px;
-    background-color: hsl(216deg, 12%, 54%);
-    border: 1px solid transparent;
-    border-radius: 50px;
-    color: hsl(0deg, 0%, 100%);
-    cursor: pointer;
-  }
   main .rating-section .submit-button {
     margin: 24px 0px;
     width: 345px;
     height: 45px;
-    background-color: hsl(25deg, 97%, 53%);
     border: 1px solid transparent;
     border-radius: 50px;
   }
